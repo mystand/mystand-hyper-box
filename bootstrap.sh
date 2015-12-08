@@ -12,7 +12,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 >/dev
 (echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list) >/dev/null 2>&1
 
 wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-(echo "deb http://packages.elastic.co/elasticsearch/1.7/debian stable main" | sudo tee /etc/apt/sources.list.d/elasticsearch.list) >/dev/null 2>&1
+(echo "deb http://packages.elastic.co/elasticsearch/2.1/debian stable main" | sudo tee /etc/apt/sources.list.d/elasticsearch.list) >/dev/null 2>&1
 
 sudo add-apt-repository ppa:webupd8team/java -y >/dev/null 2>&1
 
