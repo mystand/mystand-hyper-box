@@ -2,7 +2,7 @@
 # Updating packages
 echo ">>> Adding RVM key"
 su - vagrant -c 'gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3' >/dev/null 2>&1
-# Updating packages
+#Updating packages
 echo ">>> Updating packages"
 apt-get update >/dev/null 2>&1
 echo ">>> Installing build-essential" 
@@ -13,19 +13,20 @@ su - vagrant -c 'rvm rvmrc warning ignore allGemfiles' >/dev/null 2>&1
 su - vagrant -c 'source ~/.rvm/scripts/rvm' >/dev/null 2>&1
 echo ">>> Installing Bundler"
 su - vagrant -c 'gem install bundle' >/dev/null 2>&1
+echo ">>> Installing NVM"
+su - vagrant -c 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash' >/dev/null 2>&1 
+echo "source /home/vagrant/.nvm/nvm.sh" >> /home/vagrant/.profile
+source /home/vagrant/.profile
+nvm install 5.4.1 >/dev/null 2>&1 
 echo ">>> Installing Git"
 apt-get install -y git >/dev/null 2>&1
 echo ">>> Installing SQLite"
 apt-get install -y sqlite3 libsqlite3-dev >/dev/null 2>&1
 echo ">>> Installing Redis"
 apt-get install -y redis-server >/dev/null 2>&1 
-echo ">>> Installing Node.js"
-apt-get install -y nodejs nodejs-legacy npm>/dev/null 2>&1
 echo ">>> Installing PostgreSQL"
 apt-get install -y postgresql postgresql-contrib libpq-dev >/dev/null 2>&1
 sudo -u postgres createuser --superuser vagrant >/dev/null 2>&1
 echo ">>> Installing Imagemagick"
 apt-get install -y imagemagick >/dev/null 2>&1
 echo ">>> Successful completed"
-
-
