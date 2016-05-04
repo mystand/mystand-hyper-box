@@ -1,8 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 Vagrant.configure('2') do |config|
-  config.vm.box      = 'nikel/vervet64'
-  config.vm.hostname = 'mystand-hyper-box'
+  config.vm.box      = 'nikel/xerus64'
+  config.vm.hostname = 'hyper-box-xenial-xerus'
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000
 
